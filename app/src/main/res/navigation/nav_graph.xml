@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/intro"
+        android:name="com.EngBassemOs.foodflow.auth.view.intro"
+        android:label="intro" >
+        <action
+            android:id="@+id/action_intro_to_login"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/intro"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_intro_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_intro_to_home"
+            app:popUpTo="@id/intro"
+            app:popUpToInclusive="true"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.EngBassemOs.foodflow.auth.login.view.Login"
+        android:label="Login" >
+        <action
+            android:id="@+id/action_login_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_login_to_signUp2"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/home"
+        android:name="com.EngBassemOs.foodflow.home.controller.Home"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_home_to_intro"
+            app:popUpTo="@drawable/home"
+            app:popUpToInclusive="true"
+            app:destination="@id/intro" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.EngBassemOs.foodflow.auth.signUp.view.SignUp"
+        android:label="SignUp" >
+        <action
+            android:id="@+id/action_signUp_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_signUp_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.EngBassemOs.foodflow.auth.view.Splash"
+        android:label="Splash" >
+        <action
+            android:id="@+id/action_splash_to_intro"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true"
+            app:destination="@id/intro" />
+        <action
+            android:id="@+id/action_splash_to_home"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/search"
+        android:name="com.EngBassemOs.foodflow.search.controller.Search"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/favourite"
+        android:name="com.EngBassemOs.foodflow.favoutrite.Favourite"
+        android:label="fragment_favourite"
+        tools:layout="@layout/fragment_favourite" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.EngBassemOs.foodflow.profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_lapResult"
+            app:destination="@id/lapResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/lapResult"
+        android:name="com.EngBassemOs.foodflow.lapResult"
+        android:label="fragment_lap_result"
+        tools:layout="@layout/fragment_lap_result" >
+        <argument
+            android:name="lapModel"
+            app:argType="com.EngBassemOs.foodflow.model.LapModel" />
+    </fragment>
+</navigation>

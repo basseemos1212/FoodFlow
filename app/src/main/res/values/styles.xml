@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="titleTextAppearance">@style/MyActionBarTitleText</item>
+        <item name="backgroundColor">@color/black</item>
+    </style>
+
+    <style name="MyActionBarTitleText" parent="@style/Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textAlignment">center</item>
+        <item name="color">@color/black</item>
+    </style>
+
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "937775896861",
+    "project_id": "foodflow-4f033",
+    "storage_bucket": "foodflow-4f033.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937775896861:android:e8d1248c03244fdb0569f4",
+        "android_client_info": {
+          "package_name": "com.EngBassemOs.foodflow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937775896861-h1a2gm2k86k405iq2iadu8p15h9m48ol.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.EngBassemOs.foodflow",
+            "certificate_hash": "f8d0b567be47ba0763c8e0f09113402f211f5cca"
+          }
+        },
+        {
+          "client_id": "937775896861-31f5gdstrsruup8oiiqouss6oj8ql38t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnZTi_2jFLBLfSXRgB_-eQ3wNOVXZvMAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937775896861-31f5gdstrsruup8oiiqouss6oj8ql38t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
