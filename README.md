@@ -18,12 +18,7 @@ Clone the repository:
 git clone https://github.com/basseemos1212/FoodFlow.git
 Open the project in Android Studio.
 
-Build and run the app on an Android device or emulator.
 
-Screenshots
-Screenshot 1
-Screenshot 2
-Screenshot 3
 
 Dependencies
 FoodFlow uses the following dependencies:
