@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="172dp"
-        android:layout_height="247dp"
+        android:layout_height="200dp"
         android:src="@drawable/logo2"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         android:layout_marginTop="30dp"
@@ -28,7 +28,11 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,7 +49,7 @@
                 android:text="Create\nAccount"
 
                 android:textColor="#ffffff"
-                android:textSize="40dp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -58,11 +62,11 @@
                 android:background="@drawable/edittext_background"
                 android:drawableStart="@drawable/email"
                 android:drawablePadding="16dp"
-                android:textColor="#E1A500"
                 android:ems="10"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
+                android:textColor="#E1A500"
                 android:textColorHint="#E1A500" />
 
             <EditText
@@ -75,13 +79,13 @@
                 android:background="@drawable/edittext_background"
                 android:drawableStart="@drawable/password"
                 android:drawablePadding="16dp"
-                android:textColor="#E1A500"
                 android:ems="10"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColorHint="#E1A500"
-                />
+                android:textColor="#E1A500"
+                android:textColorHint="#E1A500" />
+
             <EditText
                 android:id="@+id/rePassText"
                 android:layout_width="match_parent"
@@ -92,32 +96,30 @@
                 android:background="@drawable/edittext_background"
                 android:drawableStart="@drawable/password"
                 android:drawablePadding="16dp"
-                android:textColor="#E1A500"
                 android:ems="10"
                 android:hint="Re Password"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColorHint="#E1A500"
-                />
+                android:textColor="#E1A500"
+                android:textColorHint="#E1A500" />
 
             <ImageView
                 android:id="@+id/signUpBtn"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="16dp"
-                android:layout_height="wrap_content"
                 app:srcCompat="@drawable/btn_login" />
 
             <TextView
                 android:id="@+id/gotoSignin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="#E1A500"
                 android:layout_marginTop="32dp"
-                style="bold"
-                android:textSize="18sp"
-                android:text="Already have an account ? Signup" />
+                android:gravity="center"
+                android:text="Already have an account ? Signup"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
 
         </LinearLayout>

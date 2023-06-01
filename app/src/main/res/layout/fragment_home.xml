@@ -58,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/mont_bold"
                 android:text="Meal Of The Day"
                 android:textAppearance="@style/HeaderTextStyle"
            />
@@ -72,6 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/mont_bold"
                 android:text="Top in Egypt"
                 android:textAppearance="@style/HeaderTextStyle"
                 />

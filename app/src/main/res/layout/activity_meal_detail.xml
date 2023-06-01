@@ -36,6 +36,7 @@
                 app:expandedTitleMarginStart="15dp"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:statusBarScrim="@color/primaryColor"
+                app:expandedTitleTextAppearance="@style/HeaderTextStyle2"
                 app:title="">
 
                 <ImageView
@@ -89,7 +90,8 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textColor="@color/primaryColor"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/mont_bold"
+                        android:textSize="16sp" />
 
 
                 </LinearLayout>
@@ -101,8 +103,9 @@
                     android:layout_marginTop="20dp"
                     android:text="Steps"
                     android:textColor="@color/primaryColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/mont_bold"
+                    android:textSize="18sp"
+                     />
 
                 <TextView
                     android:id="@+id/strSteps"
@@ -110,8 +113,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text=""
-                    android:textColor="@color/SecondaryVariant"
-                    android:textSize="18sp"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="16sp"
 
                     />
 
@@ -122,8 +125,9 @@
                     android:layout_marginTop="20dp"
                     android:text="Ingredients"
                     android:textColor="@color/primaryColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:textSize="18sp"
+                    android:fontFamily="@font/mont_bold"
+                     />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/ingrecView"
@@ -138,8 +142,9 @@
                     android:layout_marginTop="20dp"
                     android:text="Video"
                     android:textColor="@color/primaryColor"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:textSize="18sp"
+                    android:fontFamily="@font/mont_bold"
+                    />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView3"

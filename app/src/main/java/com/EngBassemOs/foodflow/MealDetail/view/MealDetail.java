@@ -226,9 +226,20 @@ public class MealDetail extends AppCompatActivity implements MealDetailInterface
                recipes.add(new Recipe("https://www.themealdb.com/images/ingredients/" + meal.getIng15()+ "-Small.png",meal.getMeas15(),meal.getIng15()));
            }
 
-
            if(!meal.getIng16().isEmpty() && !meal.getMeas16().isEmpty()){
                recipes.add(new Recipe("https://www.themealdb.com/images/ingredients/" + meal.getIng16()+ "-Small.png",meal.getMeas16(),meal.getIng16()));
+           }
+           if(!meal.getIng17().isEmpty() && !meal.getMeas17().isEmpty()){
+               recipes.add(new Recipe("https://www.themealdb.com/images/ingredients/" + meal.getIng17()+ "-Small.png",meal.getMeas17(),meal.getIng17()));
+           }
+           if(!meal.getIng18().isEmpty() && !meal.getMeas18().isEmpty()){
+               recipes.add(new Recipe("https://www.themealdb.com/images/ingredients/" + meal.getIng18()+ "-Small.png",meal.getMeas18(),meal.getIng18()));
+           }
+           if(!meal.getIng19().isEmpty() && !meal.getMeas19().isEmpty()){
+               recipes.add(new Recipe("https://www.themealdb.com/images/ingredients/" + meal.getIng19()+ "-Small.png",meal.getMeas16(),meal.getIng19()));
+           }
+           if(!meal.getIng20().isEmpty() && !meal.getMeas20().isEmpty()){
+               recipes.add(new Recipe("https://www.themealdb.com/images/ingredients/" + meal.getIng20()+ "-Small.png",meal.getMeas20(),meal.getIng20()));
            }
        }catch (Exception e){
            System.out.println(e.toString());

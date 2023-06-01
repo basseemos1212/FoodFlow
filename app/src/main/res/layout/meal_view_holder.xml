@@ -36,10 +36,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:background="#60353535"
+            android:background="#80353535"
             android:gravity="center"
             android:text="Bassem"
             android:textAppearance="@style/HeaderTextStyle"
+            android:textSize="16sp"
+            android:textStyle="normal"
             android:textColor="@color/white"
            />
     </androidx.cardview.widget.CardView>

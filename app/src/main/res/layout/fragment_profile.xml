@@ -6,6 +6,34 @@
     android:layout_height="match_parent"
     >
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/signupAnimation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/signup" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/empty_animation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="80dp"
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView6"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/empty_list" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
         android:layout_width="120dp"
@@ -43,8 +71,8 @@
         android:layout_marginTop="15dp"
         android:text="Bassemosama1212"
         android:textColor="@color/SecondaryVariant"
-        android:textSize="23sp"
-        android:textStyle="bold"
+        android:textSize="18sp"
+        android:fontFamily="@font/mont_bold"
         app:layout_constraintEnd_toEndOf="@+id/circleImageView"
         app:layout_constraintStart_toStartOf="@+id/circleImageView"
         app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
@@ -55,9 +83,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="bassemosama1212@gmail.com"
-        android:textSize="20sp"
-        android:textColor="#80E1A500"
-        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#90E1A500"
+        android:fontFamily="@font/mont_bold"
+
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -104,32 +133,6 @@
         app:constraint_referenced_ids="cardView4,circleImageView,textView3,textView6"
         tools:layout_editor_absoluteX="104dp"
         tools:layout_editor_absoluteY="303dp" />
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/signupAnimation"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_rawRes="@raw/signup"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true" />
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/empty_animation"
-        android:layout_width="0dp"
-        android:layout_marginTop="80dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView6"
-        app:lottie_rawRes="@raw/empty_list"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
