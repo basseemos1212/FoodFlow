@@ -50,20 +50,12 @@ BottomNavigationView bottomNavigationView;
         // Get the NavController object
         NavController navController = Navigation.findNavController(view);
         SharedPreferences preferences = getActivity().getSharedPreferences("USER_CREDENTIALS", Context.MODE_PRIVATE);
-        String email = preferences.getString("email", null);
-        String password = preferences.getString("password", null);
+        String status = preferences.getString("status", null);
 
-        if (email != null && password != null) {
-            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            // User is signed in automatically
-                            new Handler().postDelayed(() -> navController.navigate(R.id.action_splash_to_home), 4000);
-                        } else {
-                            // Error signing in automatically
-                            new Handler().postDelayed(() -> navController.navigate(R.id.action_splash_to_intro), 4000);
-                        }
-                    });
+        System.out.println("this is the statusss  "+status);
+        if (status!=null&&status.equals("login")) {
+
+            new Handler().postDelayed(() -> navController.navigate(R.id.action_splash_to_home), 4000);
         } else {
             // User is not signed in automatically
             new Handler().postDelayed(() -> navController.navigate(R.id.action_splash_to_intro), 4000);
@@ -71,7 +63,7 @@ BottomNavigationView bottomNavigationView;
 
 
 
-        // Navigate to the intro screen after a delay
+
 
     }
 }

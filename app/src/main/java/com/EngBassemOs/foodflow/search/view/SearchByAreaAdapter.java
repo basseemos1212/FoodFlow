@@ -35,6 +35,7 @@ public class SearchByAreaAdapter extends RecyclerView.Adapter<SearchByAreaAdapte
 
     public void setMeals(List<Meal> meals) {
         this.meals = meals;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -59,7 +60,7 @@ public class SearchByAreaAdapter extends RecyclerView.Adapter<SearchByAreaAdapte
                 .into(holder.imageView);
         holder.favButton.setOnClickListener(view -> {
 
-          listner.onClick(meals.get(position));
+          listner.onClick(meals.get(position).getIdMeal());
 
         });
     }

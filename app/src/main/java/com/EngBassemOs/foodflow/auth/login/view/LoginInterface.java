@@ -5,4 +5,5 @@ public interface LoginInterface {
     void hideProgress();
     void showLoginSuccess();
     void showLoginError(String errorMessage);
+    void showGoogleSucces();
 }

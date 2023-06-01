@@ -1,13 +1,18 @@
 package com.EngBassemOs.foodflow.search.controller;
 
+import com.EngBassemOs.foodflow.model.DetailMeal;
 import com.EngBassemOs.foodflow.model.Meal;
 import com.EngBassemOs.foodflow.model.RepositoryInterface;
 import com.EngBassemOs.foodflow.network.area.SearchByAreaNetworkDelegate;
+import com.EngBassemOs.foodflow.network.detailMeail.DetailMealNetworkDelegate;
 import com.EngBassemOs.foodflow.search.view.SearchByAreaInterFace;
 
 import java.util.List;
 
-public class SearchByAreaPresenter implements SearchByAreaPresenterInterface, SearchByAreaNetworkDelegate {
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.schedulers.Schedulers;
+
+public class SearchByAreaPresenter implements SearchByAreaPresenterInterface, SearchByAreaNetworkDelegate  {
     private SearchByAreaInterFace areaInterFace;
     private RepositoryInterface repositoryInterface;
 
@@ -22,9 +27,17 @@ public class SearchByAreaPresenter implements SearchByAreaPresenterInterface, Se
         repositoryInterface.getFavMeals();
     }
 
+
+
+
     @Override
-    public void addToFav(Meal meal) {
-        repositoryInterface.insertFavMeal(meal);
+    public void getMealByID(String id) {
+        repositoryInterface.streamOnMealByID(id).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(detailMealResponse -> {
+//                    System.out.println(detailMealResponse.getMeals().size());
+                   areaInterFace.confirmNavigate(detailMealResponse.getMeals().get(0));
+                });
+
     }
 
     @Override
@@ -37,4 +50,6 @@ public class SearchByAreaPresenter implements SearchByAreaPresenterInterface, Se
 
 
     }
+
+
 }

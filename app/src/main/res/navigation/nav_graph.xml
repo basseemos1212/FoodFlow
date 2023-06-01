@@ -10,9 +10,8 @@
         android:name="com.EngBassemOs.foodflow.auth.view.intro"
         android:label="intro" >
         <action
+
             android:id="@+id/action_intro_to_login"
-            app:popUpToInclusive="true"
-            app:popUpTo="@id/intro"
             app:destination="@id/login" />
         <action
             android:id="@+id/action_intro_to_signUp"
@@ -31,22 +30,26 @@
             android:id="@+id/action_login_to_signUp"
             app:destination="@id/signUp" />
         <action
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true"
             android:id="@+id/action_login_to_signUp2"
             app:destination="@id/signUp" />
         <action
             android:id="@+id/action_login_to_home"
-            app:popUpTo="@id/login"
+            app:popUpTo="@id/intro"
             app:popUpToInclusive="true"
+            app:launchSingleTop="true"
             app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/home"
-        android:name="com.EngBassemOs.foodflow.home.controller.Home"
+        android:name="com.EngBassemOs.foodflow.home.view.Home"
         android:label="Home" >
         <action
             android:id="@+id/action_home_to_intro"
             app:popUpTo="@drawable/home"
             app:popUpToInclusive="true"
+            app:launchSingleTop="true"
             app:destination="@id/intro" />
     </fragment>
     <fragment
@@ -54,9 +57,14 @@
         android:name="com.EngBassemOs.foodflow.auth.signUp.view.SignUp"
         android:label="SignUp" >
         <action
+            app:popUpTo="@id/intro"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
             android:id="@+id/action_signUp_to_home"
             app:destination="@id/home" />
         <action
+            app:popUpTo="@raw/signup"
+            app:popUpToInclusive="true"
             android:id="@+id/action_signUp_to_login"
             app:destination="@id/login" />
     </fragment>
@@ -82,17 +90,28 @@
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/favourite"
-        android:name="com.EngBassemOs.foodflow.favoutrite.Favourite"
+        android:name="com.EngBassemOs.foodflow.favoutrite.view.Favourite"
         android:label="fragment_favourite"
-        tools:layout="@layout/fragment_favourite" />
+        tools:layout="@layout/fragment_favourite" >
+        <action
+            android:id="@+id/action_favourite_to_intro"
+            app:popUpTo="@id/favourite"
+            app:popUpToInclusive="true"
+            app:destination="@id/intro" />
+    </fragment>
     <fragment
         android:id="@+id/profile"
-        android:name="com.EngBassemOs.foodflow.profile"
+        android:name="com.EngBassemOs.foodflow.profile.view.profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profile_to_lapResult"
             app:destination="@id/lapResult" />
+        <action
+            android:id="@+id/action_profile_to_intro"
+            app:destination="@id/intro"
+            app:popUpTo="@id/profile"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/lapResult"

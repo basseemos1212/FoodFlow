@@ -19,6 +19,7 @@ import com.EngBassemOs.foodflow.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class intro extends Fragment {
+    public static String STATUS="USER";
     Button loginButton;
     Button signUpButton;
     TextView tv;
@@ -51,6 +52,7 @@ public class intro extends Fragment {
         });
         tv.setOnClickListener(view1 -> {
             navController.navigate(R.id.action_intro_to_home);
+            STATUS="GUEST";
         });
 
 

@@ -3,20 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mealParent"
-    android:layout_width="270dp"
-    android:layout_height="300dp"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
     android:layout_margin="5dp"
 
 
-    android:elevation="3dp">
+    android:elevation="0dp">
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="10dp"
         android:foreground="@drawable/ripple_effect"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="4dp"
+        app:circularflow_defaultRadius="30dp"
+        app:circularflow_radiusInDP="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,14 +36,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
+            android:background="#60353535"
             android:gravity="center"
-
             android:text="Bassem"
-            android:background="#70353535"
-
+            android:textAppearance="@style/HeaderTextStyle"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+           />
     </androidx.cardview.widget.CardView>
 
 

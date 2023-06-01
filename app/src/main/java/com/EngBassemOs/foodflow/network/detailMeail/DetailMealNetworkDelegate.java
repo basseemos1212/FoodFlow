@@ -6,6 +6,6 @@ import com.EngBassemOs.foodflow.model.Ingredient;
 import java.util.List;
 
 public interface DetailMealNetworkDelegate {
-    public void onSuccessIngResult(DetailMeal detailMeal);
-    public void onFailureIngResult(String error);
+     void onSuccessIngResult(DetailMeal detailMeal);
+     void onFailureIngResult(String error);
 }

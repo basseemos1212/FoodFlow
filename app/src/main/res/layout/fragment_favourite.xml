@@ -4,47 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".favoutrite.Favourite"
+    tools:context=".favoutrite.view.Favourite"
     >
-
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <include
+        android:id="@+id/include3"
+        layout="@layout/person_toolbar"
+        />
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-
+        android:layout_height="0dp"
+        android:orientation="vertical"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="16dp"
+            android:text="Favourite"
+            android:textColor="@color/primaryColor"
 
-            <TextView
-                android:id="@+id/textView44"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Favourite"
-                android:textColor="@color/primaryColor"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/favMealRecView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/favMealRecView"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginTop="16dp">
-
-            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
 
 
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/signupAnimation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/signup"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/empty_animation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/empty_list"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
 </androidx.constraintlayout.widget.ConstraintLayout>

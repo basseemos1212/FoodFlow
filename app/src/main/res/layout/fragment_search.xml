@@ -8,18 +8,22 @@
 
     >
 
+    <include
+        android:id="@+id/include2"
+        layout="@layout/person_toolbar" />
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/include2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,9 +36,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Search by Category"
-                android:textColor="@color/primaryColor"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+
+                android:textAppearance="@style/HeaderTextStyle"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/searchRecycleView"
@@ -44,28 +47,25 @@
 
             <TextView
                 android:id="@+id/textView23"
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="Search by Countries"
-                android:textColor="@color/primaryColor"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textAppearance="@style/HeaderTextStyle" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/areaRecycleView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp" />
+
             <TextView
                 android:id="@+id/textView233"
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:text="Search by Ingredient"
-                android:textColor="@color/primaryColor"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textAppearance="@style/HeaderTextStyle" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ingRecycleView"
@@ -73,5 +73,32 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp" />
         </LinearLayout>
+
     </ScrollView>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/search"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadingAnimation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/loading_cook"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

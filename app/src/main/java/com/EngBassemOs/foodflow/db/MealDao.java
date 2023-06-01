@@ -6,7 +6,10 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+
+import com.EngBassemOs.foodflow.model.DetailMeal;
 import com.EngBassemOs.foodflow.model.Meal;
+
 
 import java.util.List;
 
@@ -16,9 +19,10 @@ public interface MealDao {
     void insert(Meal meal);
     @Delete
     void delete(Meal meal);
-
     @Query("SELECT * FROM favMeals")
     LiveData<List<Meal>> getAllMeals();
 
-    // Add other database operations you want to perform
+
+
+
 }

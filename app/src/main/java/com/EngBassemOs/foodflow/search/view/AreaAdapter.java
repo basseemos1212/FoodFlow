@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.EngBassemOs.foodflow.R;
 import com.EngBassemOs.foodflow.model.Area;
+import com.EngBassemOs.foodflow.network.NetworkUtils;
 
 import java.util.List;
 
@@ -57,9 +59,21 @@ public class AreaAdapter extends RecyclerView.Adapter<AreaAdapter.AreaViewHolder
     @Override
     public void onBindViewHolder(@NonNull AreaViewHolder holder, int position) {
         holder.txtTitle.setText(areas.get(position).getStrArea());
-        holder.constraintLayout.setOnClickListener(view -> listener.onClick(getContext(),areas.get(position).getStrArea(),"area"));
+        holder.constraintLayout.setOnClickListener(view -> {
 
-    }
+            if (NetworkUtils.isNetworkConnected(context)) {
+                // Internet connection is available
+
+                listener.onClick(getContext(),areas.get(position).getStrArea(),"area");
+            } else {
+                // No internet connection
+                Toast.makeText(context, "No Internet Connection", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        }
+
+
 
     @Override
     public int getItemCount() {
@@ -78,7 +92,7 @@ public class AreaAdapter extends RecyclerView.Adapter<AreaAdapter.AreaViewHolder
         public AreaViewHolder(@NonNull View itemView) {
             super(itemView);
             layout = itemView;
-            txtTitle = itemView.findViewById(R.id.countryStr);
+            txtTitle = itemView.findViewById(R.id.dayStr);
             constraintLayout = itemView.findViewById(R.id.countryParent);
         }
     }

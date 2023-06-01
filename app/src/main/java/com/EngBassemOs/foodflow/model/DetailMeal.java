@@ -1,106 +1,166 @@
 package com.EngBassemOs.foodflow.model;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
-public class DetailMeal {
+import java.io.Serializable;
+
+@Entity(tableName = "favourites")
+public class DetailMeal implements Serializable {
+    @PrimaryKey
+    @ColumnInfo(name = "id_meal")
     @SerializedName("idMeal")
+    @NonNull
     private String idMeal;
+    @ColumnInfo(name = "str_meal")
     @SerializedName("strMeal")
     private String strMeal;
+    @ColumnInfo(name = "str_DrinkAlternate")
     @SerializedName("strDrinkAlternate")
     private String strDrinkAlternate;
+    @ColumnInfo(name = "str_category")
     @SerializedName("strCategory")
     private String strCategory;
+    @ColumnInfo(name = "str_area")
     @SerializedName("strArea")
     private String strArea;
+    @ColumnInfo(name = "str_instructions")
     @SerializedName("strInstructions")
     private String strInstructions;
+    @ColumnInfo(name = "str_thumn")
     @SerializedName("strMealThumb")
     private String strMealThumb;
+    @ColumnInfo(name = "str_tags")
     @SerializedName("strTags")
     private String strTags;
+    @ColumnInfo(name = "str_yt")
     @SerializedName("strYoutube")
     private String strYoutube;
+    @ColumnInfo(name = "str_ing1")
     @SerializedName("strIngredient1")
     private String ing1;
+    @ColumnInfo(name = "str_ing2")
     @SerializedName("strIngredient2")
     private String ing2;
+    @ColumnInfo(name = "str_ing3")
     @SerializedName("strIngredient3")
     private String ing3;
+    @ColumnInfo(name = "str_ing4")
     @SerializedName("strIngredient4")
     private String ing4;
+    @ColumnInfo(name = "str_ing5")
     @SerializedName("strIngredient5")
     private String ing5;
+    @ColumnInfo(name = "str_ing6")
     @SerializedName("strIngredient6")
     private String ing6;
+    @ColumnInfo(name = "str_ing7")
     @SerializedName("strIngredient7")
     private String ing7;
+    @ColumnInfo(name = "str_ing8")
     @SerializedName("strIngredient8")
     private String ing8;
+    @ColumnInfo(name = "str_ing9")
     @SerializedName("strIngredient9")
     private String ing9;
+    @ColumnInfo(name = "str_ing10")
     @SerializedName("strIngredient10")
     private String ing10;
+    @ColumnInfo(name = "str_ing11")
     @SerializedName("strIngredient11")
     private String ing11;
+    @ColumnInfo(name = "str_ing12")
     @SerializedName("strIngredient12")
     private String ing12;
+    @ColumnInfo(name = "str_ing13")
     @SerializedName("strIngredient13")
     private String ing13;
+    @ColumnInfo(name = "str_ing14")
     @SerializedName("strIngredient14")
     private String ing14;
+    @ColumnInfo(name = "str_ing15")
     @SerializedName("strIngredient15")
     private String ing15;
+    @ColumnInfo(name = "str_ing16")
     @SerializedName("strIngredient16")
     private String ing16;
+    @ColumnInfo(name = "str_ing17")
     @SerializedName("strIngredient17")
     private String ing17;
+    @ColumnInfo(name = "str_ing18")
     @SerializedName("strIngredient18")
     private String ing18;
+    @ColumnInfo(name = "str_ing19")
     @SerializedName("strIngredient19")
     private String ing19;
+    @ColumnInfo(name = "str_ing20")
     @SerializedName("strIngredient20")
     private String ing20;
+    @ColumnInfo(name = "str_Measure1")
     @SerializedName("strMeasure1")
     private String meas1;
+    @ColumnInfo(name = "str_Measure2")
     @SerializedName("strMeasure2")
     private String meas2;
+    @ColumnInfo(name = "str_Measure3")
     @SerializedName("strMeasure3")
     private String meas3;
+    @ColumnInfo(name = "str_Measure4")
     @SerializedName("strMeasure4")
     private String meas4;
+    @ColumnInfo(name = "str_Measure5")
     @SerializedName("strMeasure5")
     private String meas5;
+    @ColumnInfo(name = "str_Measure6")
     @SerializedName("strMeasure6")
     private String meas6;
+    @ColumnInfo(name = "str_Measure7")
     @SerializedName("strMeasure7")
     private String meas7;
+    @ColumnInfo(name = "str_Measure8")
     @SerializedName("strMeasure8")
     private String meas8;
+    @ColumnInfo(name = "str_Measure9")
     @SerializedName("strMeasure9")
     private String meas9;
+    @ColumnInfo(name = "str_Measure10")
     @SerializedName("strMeasure10")
     private String meas10;
+    @ColumnInfo(name = "str_Measure11")
     @SerializedName("strMeasure11")
     private String meas11;
+    @ColumnInfo(name = "str_Measure12")
     @SerializedName("strMeasure12")
     private String meas12;
+    @ColumnInfo(name = "str_Measure13")
     @SerializedName("strMeasure13")
     private String meas13;
+    @ColumnInfo(name = "str_Measure14")
     @SerializedName("strMeasure14")
     private String meas14;
+    @ColumnInfo(name = "str_Measure15")
     @SerializedName("strMeasure15")
     private String meas15;
+    @ColumnInfo(name = "str_Measure16")
     @SerializedName("strMeasure16")
     private String meas16;
+    @ColumnInfo(name = "str_Measure17")
     @SerializedName("strMeasure17")
     private String meas17;
+    @ColumnInfo(name = "str_Measure18")
     @SerializedName("strMeasure18")
     private String meas18;
+    @ColumnInfo(name = "str_Measure19")
     @SerializedName("strMeasure19")
     private String meas19;
+    @ColumnInfo(name = "str_Measure20")
     @SerializedName("strMeasure20")
     private String meas20;
+
     public DetailMeal() {
     }
 
@@ -300,7 +360,7 @@ public class DetailMeal {
         return ing16;
     }
 
-    public void setIng61(String ing61) {
+    public void setIng16(String ing61) {
         this.ing16 = ing61;
     }
 

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.EngBassemOs.foodflow.MealDetail.view.MealDetail;
 import com.EngBassemOs.foodflow.R;
 import com.EngBassemOs.foodflow.model.Meal;
+import com.EngBassemOs.foodflow.network.NetworkUtils;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
@@ -28,10 +30,12 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.MealViewHolder
     private static final String TAG = "RecycleView";
     private final Context context;
     private List<Meal> meals;
+    private onHomeClickListener listener;
 
-    public MealAdapter(Context context, List<Meal> meals) {
+    public MealAdapter(Context context, List<Meal> meals,onHomeClickListener listener) {
         this.context = context;
         this.meals = meals;
+        this.listener=listener;
     }
 
     public List<Meal> getMeals() {
@@ -40,6 +44,7 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.MealViewHolder
 
     public void setMeals(List<Meal> meals) {
         this.meals = meals;
+
     }
 
     @NonNull
@@ -58,12 +63,18 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.MealViewHolder
         Glide.with(holder.itemView.getContext())
                 .load(meals.get(position).getStrMealThumb())
                 .into(holder.imageView);
-        holder.constraintLayout.setOnClickListener(view -> {
+        holder.constraintLayout.setOnClickListener(view ->{
 
-            Intent intent =new Intent(context, MealDetail.class);
-            intent.putExtra("mealID",meals.get(position).getIdMeal());
-            context.startActivity(intent);
 
+            if (NetworkUtils.isNetworkConnected(context)) {
+                // Internet connection is available
+
+                listener.navigate(meals.get(position).getIdMeal());
+            } else {
+                // No internet connection
+                Toast.makeText(context, "No Internet Connection", Toast.LENGTH_SHORT).show();
+
+            }
         });
     }
 

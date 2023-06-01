@@ -6,5 +6,5 @@ public interface MealDetailInterface {
     void showLoading();
     void hideLoading();
     void showError();
-    void showMeal(DetailMeal meal);
+
 }

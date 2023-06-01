@@ -21,12 +21,11 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
-    private final Context context;
-    private List<CategoryItem> categoryItems;
 
-    public Context getContext() {
-        return context;
-    }
+    private List<CategoryItem> categoryItems;
+    private OnAreaClickListner listner;
+
+
 
     public List<CategoryItem> getCategoryItems() {
         return categoryItems;
@@ -40,9 +39,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     }
 
     private static final String TAG="RecycleView";
-    public CategoryAdapter(Context context, List<CategoryItem> categoryItems) {
-        this.context = context;
+    public CategoryAdapter( List<CategoryItem> categoryItems,OnAreaClickListner listner) {
+
         this.categoryItems = categoryItems;
+        this.listner=listner;
     }
 
 
@@ -60,7 +60,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.txtTitle.setText(categoryItems.get(position).getStrCategory());
-        holder.constraintLayout.setOnClickListener(view -> System.out.println("something happen"));
+        holder.constraintLayout.setOnClickListener(view -> listner.onClick(view.getContext(),categoryItems.get(position).getStrCategory(),"category"));
         Glide.with(holder.itemView.getContext())
                 .load(categoryItems.get(position).getStrCategoryThumb())
                 .into(holder.imageView);

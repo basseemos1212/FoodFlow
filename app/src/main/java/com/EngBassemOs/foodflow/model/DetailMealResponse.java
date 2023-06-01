@@ -8,6 +8,7 @@ public class DetailMealResponse {
     @SerializedName("meals")
     private List<DetailMeal> detailMeal;
 
+
     public DetailMealResponse() {
     }
 
